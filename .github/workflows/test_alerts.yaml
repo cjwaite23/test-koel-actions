@@ -1,8 +1,9 @@
 name: test-alerts-ga
 run-name: ${{ github.actor }} testing koel workflow
 on:
-  schedule:
-    - cron: '32 5 * * 4'
+  push:
+    branches:
+      - main
 
 jobs:
   test-alerts:

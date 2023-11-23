@@ -7,7 +7,7 @@
 ##### Libraries (and installs) #####
 # Communication will be provided as to whether to install koel from HEAD or dev
 {
-  remotes::install_github("atlasoflivingaustralia/koel@galah-2.0-support")
+  remotes::install_github("atlasoflivingaustralia/koel")
   library(remotes)
   library(readr)
   library(galah)
