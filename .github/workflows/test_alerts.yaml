@@ -1,8 +1,8 @@
 name: test-alerts-ga
-run-name: ${{ github.actor }} sending alerts for current week
+run-name: ${{ github.actor }} testing koel workflow
 on:
   schedule:
-    - cron: '30 23 * * 2'
+    - cron: '15 4 * * 4'
 
 jobs:
   test-alerts:
@@ -13,7 +13,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
-          ref: 'run-alerts'
+          ref: 'main'
         
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
@@ -36,8 +36,6 @@ jobs:
         
       - name: Run script
         run: Rscript s2_test_alerts.R
-        env: 
-          BIOSEC_EMAIL_PW: ${{ secrets.BIOSEC_EMAIL_PW }}
 
       - name: Commit results
         run: |
