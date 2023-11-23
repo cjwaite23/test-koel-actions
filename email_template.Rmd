@@ -11,9 +11,6 @@ library(lubridate)
 library(readr)
 library(readxl)
 library(tidyverse)
-
-list_metadata <- readxl::read_xlsx("data/Lists metadata.xlsx") |>
-  rename(list_file = `Edited lists`, list_name = `List name`)
 ```
 
 <h1>Biosecurity Alert</b></h1>
