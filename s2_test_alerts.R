@@ -7,7 +7,7 @@
 ##### Libraries (and installs) #####
 # Communication will be provided as to whether to install koel from HEAD or dev
 {
-  remotes::install_github("atlasoflivingaustralia/koel")
+  remotes::install_github("atlasoflivingaustralia/koel@galah-2.0-support")
   library(remotes)
   library(readr)
   library(galah)
@@ -49,9 +49,10 @@ alerts_data <- species_downloads
 write_csv(alerts_data, file = "current_alerts_data.csv")
 
 # 3. build and send the email
-email_list <- readr::read_csv("./data/email_list_test.csv", show_col_types = FALSE)
-build_email_large(alerts_data, cache_path, template_path = "email_template.Rmd", output_path = NULL,
-                  email_list = email_list[c(1),], email_subject = "[TEST] ALA Biosecurity Alert",
-                  email_send = "biosecurity@ala.org.au", email_password = BIOSEC_EMAIL_PW,
-                  email_host = "smtp-relay.gmail.com", email_port = 587,
+# email_list <- readr::read_csv("./data/email_list_test.csv", show_col_types = FALSE)
+email_list <- data.frame(email = character(), list = character())
+build_email_large(alerts_data, cache_path, 
+                  template_path = "email_template.Rmd", 
+                  output_path = NULL,
+                  email_list = email_list,
                   test = TRUE)
