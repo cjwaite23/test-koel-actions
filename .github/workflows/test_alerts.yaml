@@ -1,0 +1,50 @@
+name: test-alerts-ga
+run-name: ${{ github.actor }} sending alerts for current week
+on:
+  schedule:
+    - cron: '30 23 * * 2'
+
+jobs:
+  test-alerts:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: 'run-alerts'
+        
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        
+      - name: Install Pandoc
+        uses: r-lib/actions/setup-pandoc@v2
+        with:
+          pandoc-version: '3.1.1'
+
+      - name: Install R libraries
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::remotes
+            any::readxl
+            any::pandoc
+      
+      - name: Install R dependencies
+        run: R -e "pak::pkg_install(c('readr', 'galah', 'tidyverse'))"
+        
+      - name: Run script
+        run: Rscript s2_test_alerts.R
+        env: 
+          BIOSEC_EMAIL_PW: ${{ secrets.BIOSEC_EMAIL_PW }}
+
+      - name: Commit results
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add current_alerts_data.csv
+          git add cache/maps
+          git add cache/species_images
+          git commit -m "`date +\"%Y-%m-%d\"` test alerts"
+          git push origin
