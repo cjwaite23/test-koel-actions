@@ -33,7 +33,9 @@ jobs:
             any::pandoc
       
       - name: Install R dependencies
-        run: R -e "pak::pkg_install(c('readr', 'galah', 'tidyverse'))"
+        run: |
+          R -e "pak::pkg_install(c('readr', 'tidyverse'))"
+          R -e "remotes::install_version('galah', '1.5.4')"
         
       - name: Run script
         run: Rscript s2_test_alerts.R

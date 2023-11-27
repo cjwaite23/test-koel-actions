@@ -124,6 +124,16 @@
       ],
       "Hash": "cad6cf7f1d5f6e906700b9d3e718c796"
     },
+    "assertthat": {
+      "Package": "assertthat",
+      "Version": "0.2.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "tools"
+      ],
+      "Hash": "50c838a310445e954bc13f26f26a6ecf"
+    },
     "backports": {
       "Package": "backports",
       "Version": "1.4.1",
@@ -413,6 +423,21 @@
       ],
       "Hash": "6aa54f69598c32177e920eb3402e8293"
     },
+    "crul": {
+      "Package": "crul",
+      "Version": "1.4.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "R6",
+        "curl",
+        "httpcode",
+        "jsonlite",
+        "mime",
+        "urltools"
+      ],
+      "Hash": "1eb00a531331c91d970f3af74b75321f"
+    },
     "curl": {
       "Package": "curl",
       "Version": "5.1.0",
@@ -433,6 +458,19 @@
         "methods"
       ],
       "Hash": "b4c06e554f33344e044ccd7fdca750a9"
+    },
+    "data.tree": {
+      "Package": "data.tree",
+      "Version": "1.1.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "R6",
+        "methods",
+        "stringi"
+      ],
+      "Hash": "d7602f0f55e0335b83f2353337848d6f"
     },
     "dbplyr": {
       "Package": "dbplyr",
@@ -649,30 +687,30 @@
     },
     "galah": {
       "Package": "galah",
-      "Version": "2.0.0",
+      "Version": "1.5.4",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Requirements": [
         "R",
-        "cli",
+        "assertthat",
         "crayon",
+        "crul",
+        "data.tree",
+        "digest",
         "dplyr",
         "glue",
-        "httr2",
+        "httr",
         "jsonlite",
         "lifecycle",
-        "potions",
-        "purrr",
         "readr",
         "rlang",
         "sf",
         "stringr",
         "tibble",
-        "tidyr",
         "tidyselect",
         "utils"
       ],
-      "Hash": "ec5d12307be577961e3f4e4af6587320"
+      "Hash": "eb87c3160dae7b43904cbc0f1631922e"
     },
     "gargle": {
       "Package": "gargle",
@@ -943,6 +981,13 @@
       ],
       "Hash": "a4040b08269c9af64554e55f514d002c"
     },
+    "httpcode": {
+      "Package": "httpcode",
+      "Version": "0.3.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "13641a1c6d2cc98801b76764078e17ea"
+    },
     "httr": {
       "Package": "httr",
       "Version": "1.4.7",
@@ -957,27 +1002,6 @@
         "openssl"
       ],
       "Hash": "ac107251d9d9fd72f0ca8049988f1d7f"
-    },
-    "httr2": {
-      "Package": "httr2",
-      "Version": "1.0.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "R6",
-        "cli",
-        "curl",
-        "glue",
-        "lifecycle",
-        "magrittr",
-        "openssl",
-        "rappdirs",
-        "rlang",
-        "vctrs",
-        "withr"
-      ],
-      "Hash": "e2b30f1fc039a0bab047dd52bb20ef71"
     },
     "ids": {
       "Package": "ids",
@@ -1179,21 +1203,6 @@
       ],
       "Hash": "b8552d117e1b808b09a832f589b79035"
     },
-    "lobstr": {
-      "Package": "lobstr",
-      "Version": "1.1.2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "cpp11",
-        "crayon",
-        "methods",
-        "prettyunits",
-        "rlang"
-      ],
-      "Hash": "f2a94f8fc9db382a642e965339635ad6"
-    },
     "logger": {
       "Package": "logger",
       "Version": "0.2.2",
@@ -1367,23 +1376,6 @@
         "R"
       ],
       "Hash": "bd54ba8a0a5faded999a7aab6e46b374"
-    },
-    "potions": {
-      "Package": "potions",
-      "Version": "0.2.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "jsonlite",
-        "lobstr",
-        "purrr",
-        "rlang",
-        "rrapply",
-        "stringi",
-        "yaml"
-      ],
-      "Hash": "4cd43233a0283928c1966075a8fc1c59"
     },
     "prettyunits": {
       "Package": "prettyunits",
@@ -1680,16 +1672,6 @@
         "R"
       ],
       "Hash": "4c8415e0ec1e29f3f4f6fc108bef0144"
-    },
-    "rrapply": {
-      "Package": "rrapply",
-      "Version": "1.2.6",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R"
-      ],
-      "Hash": "65e732ee965ecaef51b5d71267d5ca74"
     },
     "rstudioapi": {
       "Package": "rstudioapi",
