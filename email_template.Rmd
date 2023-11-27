@@ -31,6 +31,3 @@ table_df |>
   cols_align(align = c("left"), columns = everything()) |>
   tab_options(table.width = pct(100))
 ```
-<br>
-<br>
-<b>`r list_metadata |> filter(list_file == list_entry) |> pull(list_name)` List</b>
