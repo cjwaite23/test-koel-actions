@@ -34,7 +34,7 @@ jobs:
       
       - name: Install R dependencies
         run: |
-          sudo R
+          sudo R --vanilla
           pak::pkg_install(c('readr', 'tidyverse'))
           remotes::install_version('galah', '1.5.4')
           q()
