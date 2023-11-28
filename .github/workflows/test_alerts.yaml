@@ -37,6 +37,7 @@ jobs:
           R -e "pak::pkg_install(c('readr', 'tidyverse'))"
           sudo apt-get install libudunits2-dev
           sudo apt-get install libproj-dev
+          sudo apt-get install libgdal-dev
           
 
       - name: Run script
