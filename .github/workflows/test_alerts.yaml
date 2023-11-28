@@ -39,7 +39,6 @@ jobs:
           sudo apt-get install libproj-dev
           sudo apt-get install libgdal-dev
           
-
       - name: Run script
         run: Rscript s2_test_alerts.R
 
