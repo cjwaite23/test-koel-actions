@@ -35,6 +35,9 @@ jobs:
       - name: Install R dependencies
         run: |
           R -e "pak::pkg_install(c('readr', 'tidyverse'))"
+          sudo apt-get install libudunits2-dev
+          sudo apt-get install libproj-dev
+          
 
       - name: Run script
         run: Rscript s2_test_alerts.R
