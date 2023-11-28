@@ -6,10 +6,17 @@
 
 ##### Libraries (and installs) #####
 # Communication will be provided as to whether to install koel from HEAD or dev
+install.package()
+renv::activate()
+renv::load()
+
 {
   library(remotes)
+  print(renv::dependencies())
   remotes::install_version("galah", "1.5.4")
+  print(renv::dependencies())
   remotes::install_github("atlasoflivingaustralia/koel")
+  print(renv::dependencies())
   library(readr)
   library(galah)
   library(koel)
