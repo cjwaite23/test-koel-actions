@@ -6,7 +6,7 @@
 
 ##### Libraries (and installs) #####
 # Communication will be provided as to whether to install koel from HEAD or dev
-install.package()
+install.package("renv")
 renv::activate()
 renv::load()
 
