@@ -36,6 +36,7 @@ jobs:
         run: |
           R -e "pak::pkg_install(c('readr', 'tidyverse'))"
           R -e "remotes::install_version('galah', '1.5.4')"
+          sudo apt-get install libudunits2-dev
         
       - name: Run script
         run: Rscript s2_test_alerts.R
