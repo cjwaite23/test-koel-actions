@@ -23,21 +23,15 @@ jobs:
         uses: r-lib/actions/setup-pandoc@v2
         with:
           pandoc-version: '3.1.1'
-
-      - name: Install R libraries
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          packages: |
-            any::remotes
-            any::readxl
-            any::pandoc
-      
-      - name: Install R dependencies
-        run: |
-          R -e "pak::pkg_install(c('readr', 'tidyverse'))"
-          sudo apt-get install libudunits2-dev
-          sudo apt-get install libproj-dev
-          sudo apt-get install libgdal-dev
+          
+      - name: Set up renv
+        uses: r-lib/actions/setup-renv@v2
+        
+      - name: Restore renv environment
+        run: R -e "renv::restore()"
+        
+      - name: Install dependencies
+        run: R -e "renv::install()"
           
       - name: Run script
         run: Rscript s2_test_alerts.R
