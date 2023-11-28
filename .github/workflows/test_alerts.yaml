@@ -34,10 +34,8 @@ jobs:
       
       - name: Install R dependencies
         run: |
-          sudo R --vanilla
-          pak::pkg_install(c('readr', 'tidyverse'))
-          remotes::install_version('galah', '1.5.4')
-          q()
+          R -e "pak::pkg_install(c('readr', 'tidyverse'))"
+          sudo apt-get install libudunits2-dev
         
       - name: Run script
         run: Rscript s2_test_alerts.R
