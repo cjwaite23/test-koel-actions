@@ -10,7 +10,9 @@
 {
   library(remotes)
   library(readr)
+  install_version("galah", "1.5.4")
   library(galah)
+  install_github("atlasoflivingaustralia/koel")
   library(koel)
 }
 
