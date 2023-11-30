@@ -36,10 +36,17 @@ jobs:
       - name: Run script
         run: Rscript s2_test_alerts.R
       
+      - name: Get date
+        id: date
+        run: |
+          run: |
+          $date = Get-Date.AddHours(10).AddMinutes(30).ToString("yyyy-MM-ddTHH:mm")
+          echo "::set-output name=date::$date"
+      
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add cache
-          git commit -m "test alerts"
+          git commit -m "test alerts ${{ steps.date.outputs.date }}"
           git push origin
