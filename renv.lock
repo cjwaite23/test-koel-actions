@@ -124,16 +124,6 @@
       ],
       "Hash": "cad6cf7f1d5f6e906700b9d3e718c796"
     },
-    "assertthat": {
-      "Package": "assertthat",
-      "Version": "0.2.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "tools"
-      ],
-      "Hash": "50c838a310445e954bc13f26f26a6ecf"
-    },
     "backports": {
       "Package": "backports",
       "Version": "1.4.1",
@@ -230,9 +220,9 @@
     },
     "bslib": {
       "Package": "bslib",
-      "Version": "0.6.0",
+      "Version": "0.6.1",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Requirements": [
         "R",
         "base64enc",
@@ -247,7 +237,7 @@
         "rlang",
         "sass"
       ],
-      "Hash": "fac047b773ad75cea6e2a25214b09ca0"
+      "Hash": "c0d8599494bc7fb408cd206bbdd9cab0"
     },
     "cachem": {
       "Package": "cachem",
@@ -423,21 +413,6 @@
       ],
       "Hash": "ab12c7b080a57475248a30f4db6298c0"
     },
-    "crul": {
-      "Package": "crul",
-      "Version": "1.4.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R6",
-        "curl",
-        "httpcode",
-        "jsonlite",
-        "mime",
-        "urltools"
-      ],
-      "Hash": "1eb00a531331c91d970f3af74b75321f"
-    },
     "curl": {
       "Package": "curl",
       "Version": "5.1.0",
@@ -458,19 +433,6 @@
         "methods"
       ],
       "Hash": "b4c06e554f33344e044ccd7fdca750a9"
-    },
-    "data.tree": {
-      "Package": "data.tree",
-      "Version": "1.1.0",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "R",
-        "R6",
-        "methods",
-        "stringi"
-      ],
-      "Hash": "d7602f0f55e0335b83f2353337848d6f"
     },
     "dbplyr": {
       "Package": "dbplyr",
@@ -687,30 +649,35 @@
     },
     "galah": {
       "Package": "galah",
-      "Version": "1.5.4",
-      "Source": "Repository",
-      "Repository": "CRAN",
+      "Version": "2.0.0",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "galah",
+      "RemoteUsername": "atlasoflivingaustralia",
+      "RemoteRef": "dev",
+      "RemoteSha": "be472e8400e5e4da477ba9006487fa95437c74d1",
       "Requirements": [
         "R",
-        "assertthat",
+        "cli",
         "crayon",
-        "crul",
-        "data.tree",
-        "digest",
         "dplyr",
         "glue",
-        "httr",
+        "httr2",
         "jsonlite",
         "lifecycle",
+        "potions",
+        "purrr",
         "readr",
         "rlang",
         "sf",
         "stringr",
         "tibble",
+        "tidyr",
         "tidyselect",
         "utils"
       ],
-      "Hash": "eb87c3160dae7b43904cbc0f1631922e"
+      "Hash": "ee4715354f50d23a704ef0184a09d296"
     },
     "gargle": {
       "Package": "gargle",
@@ -981,13 +948,6 @@
       ],
       "Hash": "a4040b08269c9af64554e55f514d002c"
     },
-    "httpcode": {
-      "Package": "httpcode",
-      "Version": "0.3.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "13641a1c6d2cc98801b76764078e17ea"
-    },
     "httr": {
       "Package": "httr",
       "Version": "1.4.7",
@@ -1002,6 +962,27 @@
         "openssl"
       ],
       "Hash": "ac107251d9d9fd72f0ca8049988f1d7f"
+    },
+    "httr2": {
+      "Package": "httr2",
+      "Version": "1.0.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "R6",
+        "cli",
+        "curl",
+        "glue",
+        "lifecycle",
+        "magrittr",
+        "openssl",
+        "rappdirs",
+        "rlang",
+        "vctrs",
+        "withr"
+      ],
+      "Hash": "e2b30f1fc039a0bab047dd52bb20ef71"
     },
     "ids": {
       "Package": "ids",
@@ -1079,8 +1060,8 @@
       "RemoteHost": "api.github.com",
       "RemoteRepo": "koel",
       "RemoteUsername": "atlasoflivingaustralia",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "f4ca699abf96df1b9e65537a74ae9ed304d07bca",
+      "RemoteRef": "galah-2.0-support",
+      "RemoteSha": "817626bb831fff231784586452aecd54eeb8f2b3",
       "Requirements": [
         "R",
         "dplyr",
@@ -1105,7 +1086,7 @@
         "webshot2",
         "xml2"
       ],
-      "Hash": "f10dc365971a221d1ae33ece85457e06"
+      "Hash": "017b5ae62449533ca2f89c907a70577d"
     },
     "labeling": {
       "Package": "labeling",
@@ -1202,6 +1183,21 @@
         "rlang"
       ],
       "Hash": "b8552d117e1b808b09a832f589b79035"
+    },
+    "lobstr": {
+      "Package": "lobstr",
+      "Version": "1.1.2",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "cpp11",
+        "crayon",
+        "methods",
+        "prettyunits",
+        "rlang"
+      ],
+      "Hash": "f2a94f8fc9db382a642e965339635ad6"
     },
     "logger": {
       "Package": "logger",
@@ -1376,6 +1372,23 @@
         "R"
       ],
       "Hash": "bd54ba8a0a5faded999a7aab6e46b374"
+    },
+    "potions": {
+      "Package": "potions",
+      "Version": "0.2.0",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R",
+        "jsonlite",
+        "lobstr",
+        "purrr",
+        "rlang",
+        "rrapply",
+        "stringi",
+        "yaml"
+      ],
+      "Hash": "4cd43233a0283928c1966075a8fc1c59"
     },
     "prettyunits": {
       "Package": "prettyunits",
@@ -1673,6 +1686,16 @@
       ],
       "Hash": "4c8415e0ec1e29f3f4f6fc108bef0144"
     },
+    "rrapply": {
+      "Package": "rrapply",
+      "Version": "1.2.6",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Requirements": [
+        "R"
+      ],
+      "Hash": "65e732ee965ecaef51b5d71267d5ca74"
+    },
     "rstudioapi": {
       "Package": "rstudioapi",
       "Version": "0.15.0",
@@ -1728,21 +1751,23 @@
     },
     "scales": {
       "Package": "scales",
-      "Version": "1.2.1",
+      "Version": "1.3.0",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "RSPM",
       "Requirements": [
         "R",
         "R6",
         "RColorBrewer",
+        "cli",
         "farver",
+        "glue",
         "labeling",
         "lifecycle",
         "munsell",
         "rlang",
         "viridisLite"
       ],
-      "Hash": "906cb23d2f1c5680b8ce439b44c6fa63"
+      "Hash": "c19df082ba346b0ffa6f833e92de34d1"
     },
     "selectr": {
       "Package": "selectr",
@@ -2011,14 +2036,14 @@
     },
     "units": {
       "Package": "units",
-      "Version": "0.8-4",
+      "Version": "0.8-5",
       "Source": "Repository",
       "Repository": "RSPM",
       "Requirements": [
         "R",
         "Rcpp"
       ],
-      "Hash": "e0fbcea25008a7540c83c2c294135de0"
+      "Hash": "119d19da480e873f72241ff6962ffd83"
     },
     "urltools": {
       "Package": "urltools",
