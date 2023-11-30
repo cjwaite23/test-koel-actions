@@ -10,11 +10,11 @@
 {
   library(remotes)
   library(readr)
-#  install_github("atlasoflivingaustralia/galah@dev")
   library(galah)
-#  install_github("atlasoflivingaustralia/koel@galah-2.0-support")
   library(koel)
 }
+
+options(chromote.timeout = 60)
 
 ##### Set up galah_config() #####
 # You are welcome to use your own email or keep mine
