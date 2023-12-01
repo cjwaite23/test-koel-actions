@@ -41,7 +41,7 @@ jobs:
         run: |
           $currentDate = Get-Date
           $targetDate = $currentDate.AddHours(10).AddMinutes(30)
-          commit_date = $targetDate.ToString("yyyy-MM-ddTHH:mm")
+          $commit_date = $targetDate.ToString("yyyy-MM-ddTHH:mm")
           echo "commit_date = $commit_date" >> GITHUB_OUTPUT
       
       - name: Commit results
