@@ -42,12 +42,12 @@ jobs:
           $currentDate = Get-Date
           $targetDate = $currentDate.AddHours(10).AddMinutes(30)
           $commit_date = $targetDate.ToString("yyyy-MM-ddTHH:mm")
-          echo "commit_date = $commit_date" >> GITHUB_OUTPUT
+          echo "commit_date = $commit_date" >> GITHUB_ENV
       
       - name: Commit results
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add cache
-          git commit -m "test alerts ${{ steps.get_date.outputs.commit_date }}"
+          git commit -m "test alerts $commit_date"
           git push origin
