@@ -40,9 +40,10 @@ jobs:
         run: |
           $cstzone = [System.TimeZoneInfo]::FindSystemTimeZoneById("Cen. Australia Standard Time")
           $csttime = [System.TimeZoneInfo]::ConvertTimeFromUtc((Get-Date).ToUniversalTime(), $cstzone)
+          $committime = $csttime -f 'dd\\MM\\yyyy HH:mm'
           Get-Date $csttime.AddHours(-1) -f "dd\\MM\\yyyy HH:mm"
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           git add cache
-          git commit -m "test alerts ($csttime -f 'dd\\MM\\yyyy HH:mm')"
+          git commit -m "test alerts ($committime)"
           git push origin
